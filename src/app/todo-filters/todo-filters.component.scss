@@ -1,0 +1,140 @@
+/* استایل‌های فیلترهای تسک */
+.todo-filters {
+  display: flex; // چیدمان افقی
+  justify-content: space-between; // فاصله‌گذاری بین المان‌ها
+  align-items: center; // وسط‌چین عمودی
+  margin-bottom: 2rem; // فاصله از پایین
+  padding: 1rem; // فاصله داخلی
+  background: white; // رنگ پس‌زمینه سفید
+  border-radius: 12px; // گوشه‌های گرد
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // سایه با شفافیت کم
+
+  /* استایل گروه فیلترها */
+  .filter-group {
+    display: flex; // چیدمان افقی
+    gap: 1rem; // فاصله بین المان‌ها
+    align-items: center; // وسط‌چین عمودی
+
+    /* استایل لیبل فیلتر */
+    label {
+      font-size: 0.9rem; // اندازه فونت
+      color: #6c757d; // رنگ متن خاکستری
+      font-weight: 500; // ضخامت فونت
+    }
+
+    /* استایل سلکت فیلتر */
+    select {
+      padding: 0.5rem 1rem; // فاصله داخلی
+      border: 1px solid #dee2e6; // کادر خاکستری روشن
+      border-radius: 8px; // گوشه‌های گرد
+      font-size: 0.9rem; // اندازه فونت
+      color: #495057; // رنگ متن خاکستری تیره
+      background-color: white; // رنگ پس‌زمینه سفید
+      cursor: pointer; // نشانگر دست
+      transition: all 0.2s ease; // انیمیشن برای همه تغییرات
+
+      &:focus {
+        outline: none; // حذف خط دور در حالت فوکوس
+        border-color: #3498db; // تغییر رنگ کادر به آبی در حالت فوکوس
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2); // سایه آبی در حالت فوکوس
+      }
+    }
+  }
+
+  /* استایل دکمه پاک کردن تسک‌های تکمیل شده */
+  .clear-completed {
+    padding: 0.5rem 1rem; // فاصله داخلی
+    border: none; // حذف کادر
+    border-radius: 8px; // گوشه‌های گرد
+    background: #dc3545; // رنگ پس‌زمینه قرمز
+    color: white; // رنگ متن سفید
+    font-size: 0.9rem; // اندازه فونت
+    cursor: pointer; // نشانگر دست
+    transition: all 0.2s ease; // انیمیشن برای همه تغییرات
+
+    &:hover {
+      background: #c82333; // تغییر رنگ به قرمز تیره‌تر در هاور
+      transform: translateY(-2px); // حرکت به بالا در هاور
+    }
+
+    &:active {
+      transform: translateY(0); // برگشت به حالت اول در حالت کلیک
+    }
+  }
+}
+
+/* استایل کانتینر فیلترها */
+.filters-container {
+  display: flex; // چیدمان افقی
+  justify-content: space-between; // فاصله‌گذاری بین المان‌ها
+  align-items: center; // وسط‌چین عمودی
+  margin-bottom: 1.5rem; // فاصله از پایین
+  direction: rtl; // جهت راست به چپ
+}
+
+/* استایل گروه فیلترها */
+.filter-group {
+  display: flex; // چیدمان افقی
+  gap: 0.5rem; // فاصله بین المان‌ها
+}
+
+/* استایل دکمه فیلتر */
+.filter-btn {
+  background: none; // حذف پس‌زمینه
+  border: 1px solid #e5e7eb; // کادر خاکستری روشن
+  padding: 0.5rem 1rem; // فاصله داخلی
+  border-radius: 6px; // گوشه‌های گرد
+  cursor: pointer; // نشانگر دست
+  transition: all 0.2s ease; // انیمیشن برای همه تغییرات
+  font-size: 0.875rem; // اندازه فونت
+  color: #666; // رنگ متن خاکستری
+
+  &:hover {
+    background: #f3f4f6; // تغییر رنگ پس‌زمینه در هاور
+  }
+
+  &.active {
+    background: #4f46e5; // رنگ پس‌زمینه بنفش در حالت فعال
+    color: white; // رنگ متن سفید
+    border-color: #4f46e5; // رنگ کادر بنفش در حالت فعال
+  }
+}
+
+/* استایل گروه مرتب‌سازی */
+.sort-group {
+  display: flex; // چیدمان افقی
+  align-items: center; // وسط‌چین عمودی
+  gap: 0.5rem; // فاصله بین المان‌ها
+}
+
+/* استایل سلکت مرتب‌سازی */
+.sort-select {
+  padding: 0.5rem; // فاصله داخلی
+  border: 1px solid #e5e7eb; // کادر خاکستری روشن
+  border-radius: 6px; // گوشه‌های گرد
+  outline: none; // حذف خط دور در حالت فوکوس
+  cursor: pointer; // نشانگر دست
+  font-size: 0.875rem; // اندازه فونت
+  color: #666; // رنگ متن خاکستری
+  background-color: white; // رنگ پس‌زمینه سفید
+
+  &:focus {
+    border-color: #4f46e5; // تغییر رنگ کادر به بنفش در حالت فوکوس
+  }
+}
+
+/* استایل دکمه پاک کردن */
+.clear-btn {
+  background: none; // حذف پس‌زمینه
+  border: 1px solid #ef4444; // کادر قرمز
+  color: #ef4444; // رنگ متن قرمز
+  padding: 0.5rem 1rem; // فاصله داخلی
+  border-radius: 6px; // گوشه‌های گرد
+  cursor: pointer; // نشانگر دست
+  transition: all 0.2s ease; // انیمیشن برای همه تغییرات
+  font-size: 0.875rem; // اندازه فونت
+
+  &:hover {
+    background: #fee2e2; // تغییر رنگ پس‌زمینه به قرمز روشن در هاور
+  }
+}

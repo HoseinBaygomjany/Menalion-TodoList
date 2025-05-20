@@ -1,0 +1,301 @@
+/* کانتینر اصلی برنامه - تنظیمات پایه */
+.app-container {
+  min-height: 100vh; // حداقل ارتفاع برابر با ارتفاع صفحه
+  display: flex; // استفاده از flexbox برای چیدمان عمودی
+  flex-direction: column; // چیدمان عمودی المان‌ها
+  direction: rtl; // جهت راست به چپ برای زبان فارسی
+  font-family: 'persion'; // فونت فارسی
+  width: 100%; // عرض کامل
+  position: relative; // موقعیت نسبی برای z-index
+  overflow-x: hidden; // جلوگیری از اسکرول افقی
+}
+
+/* هدر برنامه - تنظیمات ظاهری و موقعیت */
+.app-header {
+  background: linear-gradient(135deg, #3498db, #0f6faf); // گرادیان پس‌زمینه از آبی روشن به تیره
+  color: white; // رنگ متن سفید
+  padding: 1.5rem; // فاصله داخلی
+  text-align: center; // متن وسط‌چین
+  width: 100%; // عرض کامل
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); // سایه برای عمق با شفافیت 10%
+  position: relative; // موقعیت نسبی
+  z-index: 1000; // لایه بالاتر از محتوا برای جلوگیری از همپوشانی
+
+  h1 {
+    margin: 0; // حذف فاصله خارجی
+    font-size: clamp(1.5rem, 4vw, 2.5rem); // اندازه فونت واکنش‌گرا بین 1.5 تا 2.5 ریم
+  }
+}
+
+/* بخش اصلی محتوا */
+.app-main {
+  flex: 1; // پر کردن فضای خالی باقیمانده
+  max-width: 800px; // حداکثر عرض برای خوانایی بهتر
+  width: 100%; // عرض کامل در حالت موبایل
+  margin: 0 auto; // وسط‌چین افقی
+  padding: 2rem; // فاصله داخلی
+  background: #f0eaea; // رنگ پس‌زمینه کرم روشن
+  border-radius: 16px; // گوشه‌های گرد
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // سایه با عمق بیشتر
+  margin-top: 20px; // فاصله از بالا
+  margin-bottom: 20px; // فاصله از پایین
+  position: relative; // موقعیت نسبی
+  z-index: 1; // لایه زیر هدر و فوتر
+}
+
+/* فرم افزودن تسک جدید */
+.add-todo {
+  display: flex; // چیدمان افقی
+  gap: 1rem; // فاصله بین المان‌ها
+  margin-bottom: 2rem; // فاصله از پایین
+
+  .todo-input {
+    flex: 1; // پر کردن فضای خالی باقیمانده
+    padding: 0.8rem 1rem; // فاصله داخلی
+    border: 2px solid #6f01d6; // کادر بنفش
+    border-radius: 12px; // گوشه‌های گرد
+    font-size: 1rem; // اندازه فونت
+    transition: border-color 0.3s ease; // انیمیشن تغییر رنگ کادر با مدت 0.3 ثانیه
+
+    &:focus {
+      outline: none; // حذف خط دور در حالت فوکوس
+      border-color: #3498db; // تغییر رنگ کادر به آبی در حالت فوکوس
+    }
+  }
+
+  .add-btn {
+    background: #28a745; // رنگ پس‌زمینه سبز
+    color: white; // رنگ متن سفید
+    border: none; // حذف کادر
+    border-radius: 12px; // گوشه‌های گرد
+    padding: 0.8rem 1.5rem; // فاصله داخلی
+    cursor: pointer; // نشانگر دست
+    transition: all 0.2s; // انیمیشن برای همه تغییرات
+    font-size: 1rem; // اندازه فونت
+
+    &:hover {
+      background: #218838; // تغییر رنگ به سبز تیره‌تر در هاور
+    }
+  }
+}
+
+/* بخش‌های تسک‌ها */
+.todo-sections {
+  display: flex; // چیدمان عمودی
+  flex-direction: column; // جهت عمودی
+  gap: 2rem; // فاصله بین بخش‌ها
+}
+
+/* استایل مشترک بخش‌های تسک */
+.todo-section {
+  background: #e2e0e0; // رنگ پس‌زمینه خاکستری روشن
+  border-radius: 16px; // گوشه‌های گرد
+  padding: 1.5rem; // فاصله داخلی
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // سایه با شفافیت کم
+  transition: all 0.3s ease; // انیمیشن برای همه تغییرات
+
+  h2 {
+    color: #2c3e50; // رنگ عنوان آبی تیره
+    margin: 0 0 1.5rem 0; // فاصله از پایین
+    font-size: 1.5rem; // اندازه فونت
+    padding-bottom: 0.5rem; // فاصله از پایین
+    border-bottom: 2px solid #e0e0e0; // خط جداکننده
+    display: flex; // چیدمان افقی
+    align-items: center; // وسط‌چین عمودی
+    gap: 0.5rem; // فاصله بین المان‌ها
+
+    &::before {
+      content: ''; // محتوای خالی
+      display: inline-block; // نمایش درون خطی
+      width: 12px; // عرض
+      height: 12px; // ارتفاع
+      border-radius: 50%; // دایره
+    }
+  }
+
+  /* استایل بخش تسک‌های فعال */
+  &.active-todos {
+    background: linear-gradient(to bottom right, #ffffff, #f8f9fa); // گرادیان از سفید به خاکستری خیلی روشن
+    border: 1px solid #e3f2fd; // کادر آبی خیلی روشن
+
+    h2 {
+      color: #1976d2; // رنگ عنوان آبی
+      border-bottom-color: #bbdefb; // رنگ خط جداکننده آبی روشن
+
+      &::before {
+        background: #2196f3; // رنگ دایره آبی
+      }
+    }
+
+    .todo-item {
+      background: #fff; // رنگ پس‌زمینه سفید
+      border: 1px solid #e3f2fd; // کادر آبی خیلی روشن
+      
+      &:hover {
+        background: #e3f2fd; // تغییر رنگ به آبی خیلی روشن در هاور
+        transform: translateX(-5px); // حرکت به چپ در هاور
+      }
+    }
+  }
+
+  /* استایل بخش تسک‌های تکمیل شده */
+  &.completed-todos {
+    background: linear-gradient(to bottom right, #ffffff, #f5f5f5); // گرادیان از سفید به خاکستری خیلی روشن
+    border: 1px solid #e8eaf6; // کادر بنفش خیلی روشن
+
+    h2 {
+      color: #5c6bc0; // رنگ عنوان بنفش
+      border-bottom-color: #c5cae9; // رنگ خط جداکننده بنفش روشن
+
+      &::before {
+        background: #5c6bc0; // رنگ دایره بنفش
+      }
+    }
+
+    .todo-item {
+      background: #fff; // رنگ پس‌زمینه سفید
+      border: 1px solid #e8eaf6; // کادر بنفش خیلی روشن
+      
+      &:hover {
+        background: #e8eaf6; // تغییر رنگ به بنفش خیلی روشن در هاور
+        transform: translateX(-5px); // حرکت به چپ در هاور
+      }
+
+      span.completed {
+        color: #5c6bc0; // رنگ متن بنفش برای تسک‌های تکمیل شده
+      }
+    }
+  }
+}
+
+/* لیست تسک‌ها */
+.todo-list {
+  list-style: none; // حذف نشانگر لیست
+  padding: 0; // حذف فاصله داخلی
+  margin: 0; // حذف فاصله خارجی
+  display: flex; // چیدمان عمودی
+  flex-direction: column; // جهت عمودی
+  gap: 1rem; // فاصله بین تسک‌ها
+}
+
+/* آیتم تسک */
+.todo-item {
+  display: flex; // چیدمان افقی
+  align-items: center; // وسط‌چین عمودی
+  gap: 1rem; // فاصله بین المان‌ها
+  padding: 1rem; // فاصله داخلی
+  background: #f8f9fa; // رنگ پس‌زمینه خاکستری خیلی روشن
+  border-radius: 12px; // گوشه‌های گرد
+  transition: all 0.3s ease; // انیمیشن برای همه تغییرات
+  
+  input[type="checkbox"] {
+    width: 1.2rem; // عرض
+    height: 1.2rem; // ارتفاع
+    cursor: pointer; // نشانگر دست
+    border-radius: 4px; // گوشه‌های گرد
+    border: 2px solid #bdbdbd; // کادر خاکستری
+    transition: all 0.2s ease; // انیمیشن برای همه تغییرات
+
+    &:checked {
+      background-color: #5c6bc0; // رنگ پس‌زمینه بنفش در حالت انتخاب
+      border-color: #5c6bc0; // رنگ کادر بنفش در حالت انتخاب
+    }
+  }
+  
+  span {
+    flex: 1; // پر کردن فضای خالی باقیمانده
+    font-size: 1rem; // اندازه فونت
+    transition: all 0.3s ease; // انیمیشن برای همه تغییرات
+    
+    &.completed {
+      text-decoration: line-through; // خط روی متن
+      color: #6c757d; // رنگ متن خاکستری
+    }
+  }
+  
+  .todo-actions {
+    display: flex; // چیدمان افقی
+    gap: 0.5rem; // فاصله بین دکمه‌ها
+    
+    button {
+      padding: 0.5rem 1rem; // فاصله داخلی
+      border: none; // حذف کادر
+      border-radius: 8px; // گوشه‌های گرد
+      cursor: pointer; // نشانگر دست
+      font-size: 0.9rem; // اندازه فونت
+      transition: all 0.2s; // انیمیشن برای همه تغییرات
+      
+      &.edit-btn {
+        background: #ffc107; // رنگ پس‌زمینه زرد
+        color: #000; // رنگ متن مشکی
+        
+        &:hover {
+          background: #ffb300; // تغییر رنگ به زرد تیره‌تر در هاور
+          transform: translateY(-2px); // حرکت به بالا در هاور
+        }
+      }
+      
+      &.delete-btn {
+        background: #dc3545; // رنگ پس‌زمینه قرمز
+        color: white; // رنگ متن سفید
+        
+        &:hover {
+          background: #c82333; // تغییر رنگ به قرمز تیره‌تر در هاور
+          transform: translateY(-2px); // حرکت به بالا در هاور
+        }
+      }
+    }
+  }
+}
+
+/* فوتر برنامه */
+.app-footer {
+  background: linear-gradient(135deg, #2c3e50, #34495e); // گرادیان از آبی تیره به خاکستری تیره
+  color: white; // رنگ متن سفید
+  padding: 2rem 0; // فاصله داخلی
+  width: 100%; // عرض کامل
+  position: relative; // موقعیت نسبی
+  z-index: 1000; // لایه بالاتر از محتوا
+
+  .footer-content {
+    max-width: 1200px; // حداکثر عرض
+    margin: 0 auto; // وسط‌چین
+    padding: 0 2rem; // فاصله داخلی
+    display: grid; // چیدمان گرید
+    grid-template-columns: repeat(3, 1fr); // سه ستون مساوی
+    gap: 2rem; // فاصله بین ستون‌ها
+  }
+
+  .footer-section {
+    h3 {
+      font-size: 1.2rem; // اندازه فونت
+      margin-bottom: 1rem; // فاصله از پایین
+      color: #3498db; // رنگ عنوان آبی
+    }
+
+    p, li {
+      font-size: 0.9rem; // اندازه فونت
+      line-height: 1.6; // فاصله خطوط
+      color: #ecf0f1; // رنگ متن سفید روشن
+    }
+
+    ul {
+      list-style: none; // حذف نشانگر لیست
+      padding: 0; // حذف فاصله داخلی
+      margin: 0; // حذف فاصله خارجی
+
+      li {
+        margin-bottom: 0.5rem; // فاصله بین آیتم‌ها
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center; // متن وسط‌چین
+    padding-top: 2rem; // فاصله از بالا
+    margin-top: 2rem; // فاصله از بالا
+    border-top: 1px solid rgba(255,255,255,0.1); // خط جداکننده با شفافیت 10%
+    font-size: 0.9rem; // اندازه فونت
+    color: #bdc3c7; // رنگ متن خاکستری روشن
+  }
+}

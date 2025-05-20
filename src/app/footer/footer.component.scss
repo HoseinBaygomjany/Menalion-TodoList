@@ -1,0 +1,89 @@
+/* استایل‌های فوتر برنامه */
+.footer {
+  background: linear-gradient(135deg, #2c3e50, #34495e); // گرادیان از آبی تیره به خاکستری تیره
+  color: white; // رنگ متن سفید
+  padding: 2rem 0; // فاصله داخلی
+  width: 100%; // عرض کامل
+  position: relative; // موقعیت نسبی
+  z-index: 1000; // لایه بالاتر از محتوا
+
+  /* استایل محتوای فوتر */
+  .footer-content {
+    max-width: 1200px; // حداکثر عرض
+    margin: 0 auto; // وسط‌چین
+    padding: 0 2rem; // فاصله داخلی
+    display: grid; // چیدمان گرید
+    grid-template-columns: repeat(3, 1fr); // سه ستون مساوی
+    gap: 2rem; // فاصله بین ستون‌ها
+  }
+
+  /* استایل بخش‌های فوتر */
+  .footer-section {
+    /* استایل عنوان بخش */
+    h3 {
+      font-size: 1.2rem; // اندازه فونت
+      margin-bottom: 1rem; // فاصله از پایین
+      color: #3498db; // رنگ عنوان آبی
+      font-weight: 600; // ضخامت فونت
+    }
+
+    /* استایل متن و لیست */
+    p, li {
+      font-size: 0.9rem; // اندازه فونت
+      line-height: 1.6; // فاصله خطوط
+      color: #ecf0f1; // رنگ متن سفید روشن
+    }
+
+    /* استایل لیست */
+    ul {
+      list-style: none; // حذف نشانگر لیست
+      padding: 0; // حذف فاصله داخلی
+      margin: 0; // حذف فاصله خارجی
+
+      li {
+        margin-bottom: 0.5rem; // فاصله بین آیتم‌ها
+      }
+    }
+  }
+
+  /* استایل بخش پایین فوتر */
+  .footer-bottom {
+    text-align: center; // متن وسط‌چین
+    padding-top: 2rem; // فاصله از بالا
+    margin-top: 2rem; // فاصله از بالا
+    border-top: 1px solid rgba(255,255,255,0.1); // خط جداکننده با شفافیت 10%
+    font-size: 0.9rem; // اندازه فونت
+    color: #bdc3c7; // رنگ متن خاکستری روشن
+  }
+}
+
+/* استایل متن */
+p {
+  margin: 0; // حذف فاصله خارجی
+  font-size: 0.875rem; // اندازه فونت
+}
+
+/* استایل لینک‌های شبکه‌های اجتماعی */
+.social-links {
+  display: flex; // چیدمان افقی
+  gap: 1rem; // فاصله بین المان‌ها
+}
+
+/* استایل لینک شبکه اجتماعی */
+.social-link {
+  color: #e5e7eb; // رنگ متن خاکستری روشن
+  text-decoration: none; // حذف خط زیر لینک
+  display: flex; // چیدمان افقی
+  align-items: center; // وسط‌چین عمودی
+  justify-content: center; // وسط‌چین افقی
+  width: 36px; // عرض
+  height: 36px; // ارتفاع
+  border-radius: 50%; // گرد کردن گوشه‌ها
+  background: rgba(255, 255, 255, 0.1); // پس‌زمینه سفید با شفافیت 10%
+  transition: all 0.3s ease; // انیمیشن برای همه تغییرات
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2); // تغییر رنگ پس‌زمینه در هاور
+    transform: translateY(-2px); // حرکت به بالا در هاور
+  }
+}

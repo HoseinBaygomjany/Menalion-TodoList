@@ -1,0 +1,18 @@
+<!-- فرم افزودن تسک جدید -->
+<div class="add-todo">
+  <!-- فیلد ورودی متن تسک -->
+  <input
+    type="text"
+    class="todo-input"
+    [(ngModel)]="newTodoText"
+    name="newTodoText"
+    placeholder="افزودن تسک جدید..."
+    (keyup.enter)="addTodo()"
+  >
+  
+  <!-- دکمه افزودن -->
+  <button class="add-btn" (click)="addTodo()">
+    <i class="fas fa-plus"></i>
+    افزودن
+  </button>
+</div>

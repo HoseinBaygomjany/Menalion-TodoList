@@ -1,0 +1,194 @@
+/* استایل‌های اصلی کامپوننت تسک */
+.todo-item {
+  display: flex; // چیدمان افقی
+  align-items: center; // وسط‌چین عمودی
+  gap: 1rem; // فاصله بین المان‌ها
+  padding: 1rem; // فاصله داخلی
+  background: #f8f9fa; // رنگ پس‌زمینه خاکستری خیلی روشن
+  border-radius: 12px; // گوشه‌های گرد
+  transition: all 0.3s ease; // انیمیشن برای همه تغییرات
+  margin-bottom: 0.5rem; // فاصله از پایین
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // سایه با شفافیت کم
+
+  /* استایل چک‌باکس */
+  input[type="checkbox"] {
+    width: 1.2rem; // عرض
+    height: 1.2rem; // ارتفاع
+    cursor: pointer; // نشانگر دست
+    border-radius: 4px; // گوشه‌های گرد
+    border: 2px solid #bdbdbd; // کادر خاکستری
+    transition: all 0.2s ease; // انیمیشن برای همه تغییرات
+
+    &:checked {
+      background-color: #5c6bc0; // رنگ پس‌زمینه بنفش در حالت انتخاب
+      border-color: #5c6bc0; // رنگ کادر بنفش در حالت انتخاب
+    }
+  }
+
+  /* استایل متن تسک */
+  span {
+    flex: 1; // پر کردن فضای خالی باقیمانده
+    font-size: 1rem; // اندازه فونت
+    transition: all 0.3s ease; // انیمیشن برای همه تغییرات
+    
+    &.completed {
+      text-decoration: line-through; // خط روی متن
+      color: #6c757d; // رنگ متن خاکستری
+    }
+  }
+
+  /* استایل دکمه‌های عملیات */
+  .todo-actions {
+    display: flex; // چیدمان افقی
+    gap: 0.5rem; // فاصله بین دکمه‌ها
+    
+    button {
+      padding: 0.5rem 1rem; // فاصله داخلی
+      border: none; // حذف کادر
+      border-radius: 8px; // گوشه‌های گرد
+      cursor: pointer; // نشانگر دست
+      font-size: 0.9rem; // اندازه فونت
+      transition: all 0.2s; // انیمیشن برای همه تغییرات
+      
+      /* استایل دکمه ویرایش */
+      &.edit-btn {
+        background: #ffc107; // رنگ پس‌زمینه زرد
+        color: #000; // رنگ متن مشکی
+        
+        &:hover {
+          background: #ffb300; // تغییر رنگ به زرد تیره‌تر در هاور
+          transform: translateY(-2px); // حرکت به بالا در هاور
+        }
+      }
+      
+      /* استایل دکمه حذف */
+      &.delete-btn {
+        background: #dc3545; // رنگ پس‌زمینه قرمز
+        color: white; // رنگ متن سفید
+        
+        &:hover {
+          background: #c82333; // تغییر رنگ به قرمز تیره‌تر در هاور
+          transform: translateY(-2px); // حرکت به بالا در هاور
+        }
+      }
+    }
+  }
+}
+
+/* استایل محتوای تسک */
+.todo-content {
+  display: flex; // چیدمان افقی
+  align-items: center; // وسط‌چین عمودی
+  gap: 1rem; // فاصله بین المان‌ها
+  flex: 1; // پر کردن فضای خالی باقیمانده
+}
+
+/* استایل چک‌باکس تسک */
+.todo-checkbox {
+  width: 20px; // عرض
+  height: 20px; // ارتفاع
+  cursor: pointer; // نشانگر دست
+}
+
+/* استایل عنوان تسک */
+.todo-title {
+  font-size: 1rem; // اندازه فونت
+  color: #333; // رنگ متن خاکستری تیره
+  cursor: pointer; // نشانگر دست
+  text-align: right; // متن راست‌چین
+}
+
+/* استایل دکمه‌های عملیات */
+.todo-actions {
+  display: flex; // چیدمان افقی
+  gap: 0.5rem; // فاصله بین دکمه‌ها
+}
+
+/* استایل دکمه‌های ویرایش و حذف */
+.edit-btn, .delete-btn {
+  background: none; // حذف پس‌زمینه
+  border: none; // حذف کادر
+  color: #666; // رنگ متن خاکستری
+  font-size: 1.2rem; // اندازه فونت
+  cursor: pointer; // نشانگر دست
+  padding: 0.5rem; // فاصله داخلی
+  border-radius: 4px; // گوشه‌های گرد
+  transition: all 0.2s ease; // انیمیشن برای همه تغییرات
+  display: flex; // چیدمان افقی
+  align-items: center; // وسط‌چین عمودی
+  justify-content: center; // وسط‌چین افقی
+
+  &:hover {
+    background: #f3f4f6; // تغییر رنگ پس‌زمینه در هاور
+  }
+}
+
+/* استایل دکمه حذف */
+.delete-btn {
+  color: #ef4444; // رنگ متن قرمز
+  &:hover {
+    background: #fee2e2; // تغییر رنگ پس‌زمینه به قرمز روشن در هاور
+  }
+}
+
+/* استایل فرم ویرایش */
+.edit-form {
+  display: flex; // چیدمان افقی
+  align-items: center; // وسط‌چین عمودی
+  gap: 0.5rem; // فاصله بین المان‌ها
+  flex: 1; // پر کردن فضای خالی باقیمانده
+}
+
+/* استایل فیلد ورودی ویرایش */
+.edit-input {
+  flex: 1; // پر کردن فضای خالی باقیمانده
+  padding: 0.5rem; // فاصله داخلی
+  border: 1px solid #e5e7eb; // کادر خاکستری روشن
+  border-radius: 4px; // گوشه‌های گرد
+  font-size: 1rem; // اندازه فونت
+  outline: none; // حذف خط دور در حالت فوکوس
+  text-align: right; // متن راست‌چین
+
+  &:focus {
+    border-color: #4f46e5; // تغییر رنگ کادر به بنفش در حالت فوکوس
+  }
+}
+
+/* استایل دکمه‌های فرم ویرایش */
+.edit-actions {
+  display: flex; // چیدمان افقی
+  gap: 0.25rem; // فاصله بین دکمه‌ها
+}
+
+/* استایل دکمه‌های ذخیره و لغو */
+.save-btn, .cancel-btn {
+  background: none; // حذف پس‌زمینه
+  border: none; // حذف کادر
+  padding: 0.25rem; // فاصله داخلی
+  border-radius: 4px; // گوشه‌های گرد
+  cursor: pointer; // نشانگر دست
+  display: flex; // چیدمان افقی
+  align-items: center; // وسط‌چین عمودی
+  justify-content: center; // وسط‌چین افقی
+  transition: all 0.2s ease; // انیمیشن برای همه تغییرات
+
+  .material-icons {
+    font-size: 1.2rem; // اندازه آیکون
+  }
+}
+
+/* استایل دکمه ذخیره */
+.save-btn {
+  color: #10b981; // رنگ متن سبز
+  &:hover {
+    background: #d1fae5; // تغییر رنگ پس‌زمینه به سبز روشن در هاور
+  }
+}
+
+/* استایل دکمه لغو */
+.cancel-btn {
+  color: #ef4444; // رنگ متن قرمز
+  &:hover {
+    background: #fee2e2; // تغییر رنگ پس‌زمینه به قرمز روشن در هاور
+  }
+}

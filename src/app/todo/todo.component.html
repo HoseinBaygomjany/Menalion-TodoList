@@ -1,0 +1,58 @@
+<!-- آیتم تسک -->
+<div class="todo-item" [class.completed]="completed">
+  <!-- حالت نمایش عادی -->
+  <div class="todo-content" *ngIf="!isEditing">
+    <!-- چک‌باکس تغییر وضعیت -->
+    <input
+      type="checkbox"
+      [checked]="completed"
+      (change)="onToggle()"
+      class="todo-checkbox"
+    >
+    
+    <!-- متن تسک -->
+    <span class="todo-title" (dblclick)="startEditing()">
+      {{ text }}
+    </span>
+    
+    <!-- دکمه‌های عملیات -->
+    <div class="todo-actions">
+      <!-- دکمه ویرایش -->
+      <button (click)="startEditing()" class="edit-btn" title="ویرایش">
+        <span class="material-icons">edit</span>
+      </button>
+      
+      <!-- دکمه حذف -->
+      <button (click)="onDelete()" class="delete-btn" title="حذف">
+        <span class="material-icons">delete</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- حالت ویرایش -->
+  <div *ngIf="isEditing" class="edit-form">
+    <!-- فیلد ویرایش متن -->
+    <input
+      type="text"
+      [(ngModel)]="editText"
+      (keyup.enter)="saveEdit()"
+      (keyup.escape)="cancelEdit()"
+      class="edit-input"
+      #editInput
+      autofocus
+    >
+    
+    <!-- دکمه‌های ویرایش -->
+    <div class="edit-actions">
+      <!-- دکمه ذخیره -->
+      <button (click)="saveEdit()" class="save-btn" title="ذخیره">
+        <span class="material-icons">check</span>
+      </button>
+      
+      <!-- دکمه لغو -->
+      <button (click)="cancelEdit()" class="cancel-btn" title="لغو">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+  </div>
+</div>

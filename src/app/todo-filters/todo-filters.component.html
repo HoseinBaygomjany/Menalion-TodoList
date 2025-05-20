@@ -1,0 +1,35 @@
+<div class="todo-filters">
+  <div class="filter-group">
+    <label for="filter">فیلتر:</label>
+    <select
+      id="filter"
+      [(ngModel)]="filter"
+      (change)="onFilterChange(filter)"
+    >
+      <option value="all">همه</option>
+      <option value="active">فعال</option>
+      <option value="completed">تکمیل شده</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="sort">مرتب‌سازی:</label>
+    <select
+      id="sort"
+      [(ngModel)]="sortBy"
+      (change)="onSortByChange(sortBy)"
+    >
+      <option value="newest">جدیدترین</option>
+      <option value="oldest">قدیمی‌ترین</option>
+      <option value="alphabetical">الفبایی</option>
+    </select>
+  </div>
+
+  <button
+    class="clear-completed"
+    *ngIf="hasCompletedTodos"
+    (click)="onClearCompleted()"
+  >
+    پاک کردن تسک‌های تکمیل شده
+  </button>
+</div>

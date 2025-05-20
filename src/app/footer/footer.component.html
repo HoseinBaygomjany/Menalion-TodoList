@@ -1,0 +1,56 @@
+<!-- فوتر برنامه -->
+<footer class="footer">
+  <!-- محتوای فوتر -->
+  <div class="footer-content">
+    <!-- بخش اطلاعات -->
+    <div class="footer-section">
+      <!-- عنوان بخش -->
+      <h3>درباره برنامه</h3>
+      
+      <!-- توضیحات -->
+      <p>
+        {{ appName }} یک برنامه مدیریت کارهای روزانه است که به شما کمک می‌کند
+        کارهای خود را به صورت منظم و کارآمد مدیریت کنید.
+      </p>
+    </div>
+
+    <!-- بخش لینک‌های مفید -->
+    <div class="footer-section">
+      <!-- عنوان بخش -->
+      <h3>لینک‌های مفید</h3>
+      
+      <!-- لیست لینک‌ها -->
+      <ul>
+        <li><a href="#">راهنما</a></li>
+        <li><a href="#">حریم خصوصی</a></li>
+        <li><a href="#">شرایط استفاده</a></li>
+      </ul>
+    </div>
+
+    <!-- بخش شبکه‌های اجتماعی -->
+    <div class="footer-section">
+      <!-- عنوان بخش -->
+      <h3>شبکه‌های اجتماعی</h3>
+      
+      <!-- لینک‌های شبکه‌های اجتماعی -->
+      <div class="social-links">
+        <a
+          *ngFor="let link of socialLinks"
+          [href]="link.url"
+          target="_blank"
+          class="social-link"
+          [title]="link.name"
+        >
+          <i [class]="'fab fa-' + link.icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- بخش کپی‌رایت -->
+  <div class="footer-bottom">
+    <p>
+      &copy; {{ currentYear }} {{ appName }} | توسعه‌دهنده: {{ developer }}
+    </p>
+  </div>
+</footer>
